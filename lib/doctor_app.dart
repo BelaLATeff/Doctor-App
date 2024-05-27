@@ -15,7 +15,7 @@ class DoctorApp extends StatelessWidget {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       child: GetMaterialApp(
-        title: "Doc App",
+        title: "Doctor App",
         debugShowCheckedModeBanner: false,
         initialRoute: Routes.onBoarding,
         onGenerateRoute: appRouter.generatorRoute,
