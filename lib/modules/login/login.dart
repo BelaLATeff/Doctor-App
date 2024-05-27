@@ -48,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
             userData = state.loginResponseBody.data;
             Get.snackbar(
               "Congratulations",
-              "Login Success",
+              "${state.loginResponseBody.message}",
               backgroundColor: Colors.black54,
               colorText: Colors.white,
             );
@@ -56,6 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
             context.pushNamed(Routes.home, arguments: userData);
           } else if (state is LoginFailure) {
             Get.snackbar("Opps..!", "Your Email or Password is Wrong");
+            context.pop();
           }
         },
         child: SafeArea(

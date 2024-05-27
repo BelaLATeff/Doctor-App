@@ -5,12 +5,12 @@ class LoginRequestBody {
   LoginRequestBody({required this.email, required this.password});
 
   Map<String, dynamic> toJson() {
-    Map<String, dynamic> data = {};
+    final data = <String, dynamic>{};
     data["email"] = email;
     data["password"] = password;
 
     return data;
   }
 
-  // toLowerCase() {}
+  toLowerCase() {}
 }
