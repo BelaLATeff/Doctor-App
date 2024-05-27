@@ -1,0 +1,38 @@
+name: doc_app
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.1 <4.0.0'
+
+dependencies:
+  cupertino_icons: ^1.0.6
+  easy_localization: ^3.0.5
+  firebase_core: ^2.31.0
+  flutter:
+    sdk: flutter
+  flutter_bloc: null
+  flutter_native_splash: null
+  flutter_screenutil: ^5.9.0
+  flutter_svg: ^2.0.10+1
+  get: ^4.6.6
+  http: ^1.2.1
+  intl: null
+  shared_preferences: null
+
+dev_dependencies:
+  flutter_lints: ^3.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/svgs/
+    - assets/images/
+    - assets/fonts/
