@@ -1,3 +1,5 @@
+import 'package:doc_app/modules/sign_up/cubit_sign_up/sign_up_cubit.dart';
+import 'package:doc_app/modules/sign_up/sign_up.dart';
 import '../data/models/login/login_response_body.dart';
 import '../modules/home/home_screen.dart';
 import '../modules/login/cubit_Login/login_cubit.dart';
@@ -26,6 +28,13 @@ class AppRouter extends Route {
         final userData = (settings.arguments ?? UserData()) as UserData;
         return MaterialPageRoute(
           builder: (context) => HomeScreen(userData: userData),
+        );
+      case Routes.signUp:
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) => SignUpCubit(),
+            child: const SignUpScreen(),
+          ),
         );
       default:
         return MaterialPageRoute(

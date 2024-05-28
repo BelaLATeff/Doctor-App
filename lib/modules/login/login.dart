@@ -1,18 +1,18 @@
-import '../../data/models/login/login_response_body.dart';
-import 'cubit_Login/login_cubit.dart';
-import 'widgets/already_have_account.dart';
-import 'widgets/custom_divider.dart';
-import 'widgets/sign_up_icon.dart';
-import 'widgets/terms_and_conditions_text.dart';
-import '../../routes/routes.dart';
-import '../../theme/colors.dart';
-import '../../theme/form_text_field.dart';
-import '../../theme/text_button.dart';
-import '../../theme/text_styles.dart';
-import '../../utils/extensions_navigator.dart';
-import '../../utils/functions.dart';
-import '../../utils/spacer.dart';
-import '../../utils/validation.dart';
+import 'package:doc_app/data/models/login/login_response_body.dart';
+import 'package:doc_app/modules/login/cubit_Login/login_cubit.dart';
+import 'package:doc_app/modules/login/widgets/custom_divider.dart';
+import 'package:doc_app/modules/login/widgets/dont_have_account.dart';
+import 'package:doc_app/modules/login/widgets/sign_up_icon.dart';
+import 'package:doc_app/modules/login/widgets/terms_and_conditions_text.dart';
+import 'package:doc_app/routes/routes.dart';
+import 'package:doc_app/theme/colors.dart';
+import 'package:doc_app/theme/form_text_field.dart';
+import 'package:doc_app/theme/text_button.dart';
+import 'package:doc_app/theme/text_styles.dart';
+import 'package:doc_app/utils/extensions_navigator.dart';
+import 'package:doc_app/utils/functions.dart';
+import 'package:doc_app/utils/spacer.dart';
+import 'package:doc_app/utils/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -56,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
             context.pushNamed(Routes.home, arguments: userData);
           } else if (state is LoginFailure) {
             Get.snackbar("Opps..!", "Your Email or Password is Wrong");
-            context.pop();
+            // context.pop();
           }
         },
         child: SafeArea(
@@ -157,7 +157,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         heightSpace(35),
                         const TermsAndConditionsText(),
                         heightSpace(25),
-                        const AlreadyHaveAnAccountText(),
+                        const DontHaveAnAccountText(),
                       ],
                     ),
                   ),
