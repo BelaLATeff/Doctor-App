@@ -12,20 +12,20 @@ class AppTextFormField extends StatelessWidget {
   final InputBorder? focusedBorder;
   final TextStyle? hintStyle;
   final bool? obscureText;
-  final String? Function(String?)? validator;
+  final Function(String?) validator;
   final void Function(String?)? onSave;
   final TextEditingController? controller;
 
   const AppTextFormField({
     super.key,
-    this.edgeInsetsGeometry,
     required this.hintText,
+    required this.validator,
+    this.edgeInsetsGeometry,
     this.suffixIcon,
     this.enabledBorder,
     this.hintStyle,
     this.focusedBorder,
     this.obscureText,
-    this.validator,
     this.onSave,
     this.controller,
   });
@@ -34,7 +34,9 @@ class AppTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-      validator: validator,
+      validator: (value) {
+        return validator(value);
+      },
       onSaved: onSave,
       obscureText: obscureText ?? false,
       decoration: InputDecoration(
