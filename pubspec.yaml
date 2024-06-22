@@ -21,6 +21,7 @@ dependencies:
   get: ^4.6.6
   http: ^1.2.1
   intl: null
+  lottie: ^3.1.2
   shared_preferences: null
 
 dev_dependencies:
@@ -36,3 +37,4 @@ flutter:
     - assets/svgs/
     - assets/images/
     - assets/fonts/
+    - assets/lottie/

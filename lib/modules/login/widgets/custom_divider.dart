@@ -15,9 +15,12 @@ class CustomDivider extends StatelessWidget {
             color: Colors.black12,
           ),
         ),
-        const Text(
-          "  Or sign in with  ",
-          style: TextStyle(fontSize: 20, color: Colors.black38),
+        Text(
+          "  or sign in with  ",
+          style: TextStyle(
+            fontSize: 17.sp,
+            color: Colors.black38,
+          ),
         ),
         Expanded(
           child: Container(

@@ -12,7 +12,6 @@ part 'login_state.dart';
 class LoginCubit extends Cubit<LoginState> {
   LoginCubit() : super(LoginInitial());
   LoginResponseBody? loginResponseBody;
-  UserData? userData;
   String? name;
   final loginURl = Uri.parse(ApiConstants.baseURL + ApiConstants.login);
 
@@ -34,7 +33,6 @@ class LoginCubit extends Cubit<LoginState> {
         loginResponseBody = LoginResponseBody.fromJson(data);
         emit(LoginSuccess(loginResponseBody: loginResponseBody!));
       } else {
-        if (response.statusCode == 401) {}
         emit(LoginFailure());
       }
     } catch (e) {

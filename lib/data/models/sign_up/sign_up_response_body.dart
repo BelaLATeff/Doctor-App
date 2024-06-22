@@ -1,16 +1,16 @@
-class RegisterResponseBody {
+class SignUpResponseBody {
   String? message;
   UserData? data;
   bool? status;
   int? code;
 
-  RegisterResponseBody({
+  SignUpResponseBody({
     this.message,
     this.data,
     this.status,
     this.code,
   });
-  RegisterResponseBody.fromJson(Map<String, dynamic> json) {
+  SignUpResponseBody.fromJson(Map<String, dynamic> json) {
     message = json['message']?.toString();
     data = (json['data'] != null) ? UserData.fromJson(json['data']) : null;
     status = json['status'];
