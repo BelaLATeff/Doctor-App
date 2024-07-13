@@ -1,8 +1,8 @@
 import 'package:doc_app/data/models/sign_up/sign_up_request_body.dart';
-import 'package:doc_app/modules/sign_up/cubit_sign_up/sign_up_cubit.dart';
+import 'package:doc_app/modules/sign_up/sign_up_cubit/sign_up_cubit.dart';
 
 import '../data/models/login/login_request_body.dart';
-import '../modules/login/cubit_Login/login_cubit.dart';
+import '../modules/login/login_cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

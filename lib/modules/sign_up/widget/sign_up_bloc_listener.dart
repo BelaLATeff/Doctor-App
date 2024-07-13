@@ -1,8 +1,8 @@
-import 'package:doc_app/modules/sign_up/cubit_sign_up/sign_up_cubit.dart';
+import 'package:doc_app/modules/sign_up/sign_up_cubit/sign_up_cubit.dart';
 import 'package:doc_app/routes/routes.dart';
 import 'package:doc_app/theme/colors.dart';
 import 'package:doc_app/theme/text_styles.dart';
-import 'package:doc_app/utils/extensions_navigator.dart';
+import 'package:doc_app/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
