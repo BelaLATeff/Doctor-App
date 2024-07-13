@@ -1,3 +1,5 @@
+import 'package:doc_app/main.dart';
+
 import 'routes/app_router.dart';
 import 'routes/routes.dart';
 import 'theme/colors.dart';
@@ -17,7 +19,7 @@ class DoctorApp extends StatelessWidget {
       child: GetMaterialApp(
         title: "Doctor App",
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.onBoarding,
+        initialRoute: isLoggedIn ? Routes.home : Routes.login,
         onGenerateRoute: appRouter.generatorRoute,
         theme: ThemeData(
           primaryColor: ColorsManager.mainColor,

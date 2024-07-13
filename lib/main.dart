@@ -1,11 +1,28 @@
+import 'package:doc_app/utils/constants.dart';
+import 'package:doc_app/utils/extensions.dart';
+import 'package:doc_app/utils/shared_pref_helper.dart';
+
 import 'doctor_app.dart';
 import 'routes/app_router.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+bool isLoggedIn = false;
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await checkIfUserLoggedIn();
   runApp(
     DoctorApp(
       appRouter: AppRouter(),
     ),
   );
+}
+
+checkIfUserLoggedIn() async {
+  String? userToken =
+      await SharedPrefHelper.getSecuredString(ShardPrefKeys.userToken);
+  if (!userToken.isNullOrEmpty()) {
+    isLoggedIn = true;
+  } else {
+    isLoggedIn = false;
+  }
 }

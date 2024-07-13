@@ -1,5 +1,5 @@
 import 'package:doc_app/routes/routes.dart';
-import 'package:doc_app/utils/extensions_navigator.dart';
+import 'package:doc_app/utils/extensions.dart';
 import 'package:flutter/gestures.dart';
 
 import '../../../theme/text_styles.dart';

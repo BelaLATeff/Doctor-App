@@ -1,7 +1,7 @@
 import '../../routes/routes.dart';
 import '../../theme/text_button.dart';
 import '../../theme/text_styles.dart';
-import '../../utils/extensions_navigator.dart';
+import '../../utils/extensions.dart';
 import '../../utils/spacer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -1,4 +1,4 @@
-import 'package:doc_app/modules/sign_up/cubit_sign_up/sign_up_cubit.dart';
+import 'package:doc_app/modules/sign_up/sign_up_cubit/sign_up_cubit.dart';
 import 'package:doc_app/theme/form_text_field.dart';
 import 'package:doc_app/utils/spacer.dart';
 import 'package:doc_app/utils/validation.dart';

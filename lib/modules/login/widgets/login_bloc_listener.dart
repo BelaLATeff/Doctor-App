@@ -1,8 +1,8 @@
 import 'package:doc_app/data/models/login/login_response_body.dart';
-import 'package:doc_app/modules/login/cubit_Login/login_cubit.dart';
+import 'package:doc_app/modules/login/login_cubit/login_cubit.dart';
 import 'package:doc_app/routes/routes.dart';
 import 'package:doc_app/theme/colors.dart';
-import 'package:doc_app/utils/extensions_navigator.dart';
+import 'package:doc_app/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';

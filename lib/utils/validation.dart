@@ -1,13 +1,17 @@
-import 'package:doc_app/modules/sign_up/cubit_sign_up/sign_up_cubit.dart';
+import 'package:doc_app/modules/sign_up/sign_up_cubit/sign_up_cubit.dart';
+import 'package:doc_app/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Validation {
   static String? emailValidator(String? email) {
-    if (email == null || email.isEmpty) {
+    if (email.isNullOrEmpty()) {
       return "Email is Required";
     }
-    if (!email.contains("@")) {
+    if (!email!.contains("@")) {
+      return "Please Enter valid Email";
+    }
+    if (!email.contains("@") || !email.contains("co")) {
       return "Please Enter valid Email";
     }
 
@@ -15,10 +19,10 @@ class Validation {
   }
 
   static String? passwordValidator(String? password) {
-    if (password == null || password.isEmpty) {
+    if (password.isNullOrEmpty()) {
       return "Password is Required";
     }
-    if (password.length < 8) {
+    if (password!.length < 8) {
       return "Must be at least 8 character";
     }
     return null;
@@ -26,10 +30,10 @@ class Validation {
 
   static String? confirmPasswordValidator(
       String? confirmPassword, BuildContext context) {
-    if (confirmPassword == null || confirmPassword.isEmpty) {
+    if (confirmPassword.isNullOrEmpty()) {
       return "Password is Required";
     }
-    if (confirmPassword.length < 8) {
+    if (confirmPassword!.length < 8) {
       return "Must be at least 8 character";
     }
     if (confirmPassword !=
@@ -40,10 +44,10 @@ class Validation {
   }
 
   static String? nameValidator(String? name) {
-    if (name == null || name.isEmpty) {
+    if (name.isNullOrEmpty()) {
       return "Please Enter Your Name";
     }
-    if (name.length < 3) {
+    if (name!.length < 3) {
       return "Must be at least 3 character";
     }
     return null;
