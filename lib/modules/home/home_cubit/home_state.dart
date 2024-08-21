@@ -14,3 +14,11 @@ final class HomeSuccess extends HomeState {
 }
 
 final class HomeFailure extends HomeState {}
+
+final class DoctorSuccuss extends HomeState {
+  final List<DoctorsData?>? doctorsData;
+
+  DoctorSuccuss({required this.doctorsData});
+}
+
+final class DoctorFailure extends HomeState {}

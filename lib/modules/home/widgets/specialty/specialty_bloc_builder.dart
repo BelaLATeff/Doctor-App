@@ -2,19 +2,18 @@ import 'dart:developer';
 
 import 'package:doc_app/data/models/home/specializations_data.dart';
 import 'package:doc_app/modules/home/home_cubit/home_cubit.dart';
-import 'package:doc_app/modules/home/widgets/doctor_specialty.dart';
-import 'package:doc_app/modules/home/widgets/recommendation_doctor.dart';
+import 'package:doc_app/modules/home/widgets/specialty/specialty_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HomeBLocBuilder extends StatefulWidget {
-  const HomeBLocBuilder({super.key});
+class SpecialtyBLocBuilder extends StatefulWidget {
+  const SpecialtyBLocBuilder({super.key});
 
   @override
-  State<HomeBLocBuilder> createState() => _HomeBLocBuilderState();
+  State<SpecialtyBLocBuilder> createState() => _SpecialtyBLocBuilderState();
 }
 
-class _HomeBLocBuilderState extends State<HomeBLocBuilder> {
+class _SpecialtyBLocBuilderState extends State<SpecialtyBLocBuilder> {
   List<SpecializationsData?>? specializationsData;
 
   @override
@@ -30,17 +29,8 @@ class _HomeBLocBuilderState extends State<HomeBLocBuilder> {
           );
         } else if (state is HomeSuccess) {
           specializationsData = (state).responseBodySpecialization.data;
-          return Expanded(
-            child: Column(
-              children: [
-                DoctorSpecialty(
-                  specializationsData: specializationsData ?? [],
-                ),
-                RecommendationDoctor(
-                  doctorsData: specializationsData!.first!.doctors ?? [],
-                ),
-              ],
-            ),
+          return SpecialtyListView(
+            specializationsData: specializationsData ?? [],
           );
         } else if (state is HomeFailure) {
           log("Some Think is Error");
