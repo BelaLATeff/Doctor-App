@@ -16,7 +16,6 @@ class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeInitial());
 
   final url = ApiConstants.baseURL + ApiConstants.allSpecialization;
-  String token = "";
   ResponseModelSpecialization? responseBodySpecialization;
   SpecializationsData? specializationsData;
   void getAllSpecialization() async {
