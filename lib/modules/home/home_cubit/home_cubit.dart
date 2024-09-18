@@ -35,8 +35,10 @@ class HomeCubit extends Cubit<HomeState> {
         responseBodySpecialization =
             ResponseModelSpecialization.fromJson(dataOfSpecialization);
         log(specializationResponse.body);
-        emit(HomeSuccess(
-            responseBodySpecialization: responseBodySpecialization!));
+        getDoctorsList(
+            specializationId: responseBodySpecialization?.data?.first?.id);
+        // emit(HomeSuccess(
+        //     responseBodySpecialization: responseBodySpecialization!));
       } else {
         log(specializationResponse.body);
         emit(HomeFailure());
@@ -45,4 +47,24 @@ class HomeCubit extends Cubit<HomeState> {
       log(e.toString());
     }
   }
+
+  void getDoctorsList({required int? specializationId}) {
+    List<DoctorsData?>? doctorsList =
+        getDoctorsListBySpecializationId(specializationId);
+
+    if (!doctorsList.isNullOrEmpty()) {
+      emit(HomeSuccess(doctorsList, responseBodySpecialization!));
+    } else {
+      emit(HomeFailure());
+    }
+  }
+
+  /// returns the list of doctors based on the specialization id
+  getDoctorsListBySpecializationId(specializationId) {
+    return responseBodySpecialization?.data
+        ?.firstWhere((specialization) => specialization?.id == specializationId)
+        ?.doctors;
+  }
 }
+
+class Doctors {}
