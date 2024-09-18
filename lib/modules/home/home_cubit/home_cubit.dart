@@ -37,8 +37,6 @@ class HomeCubit extends Cubit<HomeState> {
         log(specializationResponse.body);
         getDoctorsList(
             specializationId: responseBodySpecialization?.data?.first?.id);
-        // emit(HomeSuccess(
-        //     responseBodySpecialization: responseBodySpecialization!));
       } else {
         log(specializationResponse.body);
         emit(HomeFailure());
