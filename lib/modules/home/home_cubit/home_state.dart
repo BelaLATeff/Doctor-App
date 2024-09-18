@@ -9,16 +9,16 @@ final class HomeLoading extends HomeState {}
 
 final class HomeSuccess extends HomeState {
   final ResponseModelSpecialization responseBodySpecialization;
+  final List<DoctorsData?>? doctorsData;
 
-  HomeSuccess({required this.responseBodySpecialization});
+  HomeSuccess(this.doctorsData, this.responseBodySpecialization);
 }
 
 final class HomeFailure extends HomeState {}
 
-final class DoctorSuccuss extends HomeState {
-  final List<DoctorsData?>? doctorsData;
+// final class DoctorSuccuss extends HomeState {
 
-  DoctorSuccuss({required this.doctorsData});
-}
+//   DoctorSuccuss({required this.doctorsData});
+// }
 
-final class DoctorFailure extends HomeState {}
+// final class DoctorFailure extends HomeState {}

@@ -12,9 +12,9 @@ class DoctorBlocBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
-        if (state is DoctorSuccuss) {
+        if (state is HomeSuccess) {
           return DoctorListView(doctorsList: state.doctorsData);
-        } else if (state is DoctorFailure) {
+        } else if (state is HomeFailure) {
           log("Some Think Error");
         }
         return const SizedBox.shrink();

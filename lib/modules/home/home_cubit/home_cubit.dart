@@ -15,11 +15,11 @@ import 'package:http/http.dart' as http;
 part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
+  ResponseModelSpecialization? responseBodySpecialization;
+  SpecializationsData? specializationsData;
   HomeCubit() : super(HomeInitial());
 
   final url = ApiConstants.baseURL + ApiConstants.allSpecialization;
-  ResponseModelSpecialization? responseBodySpecialization;
-  SpecializationsData? specializationsData;
   void getAllSpecialization() async {
     emit(HomeLoading());
     final specializationResponse = await http.get(Uri.parse(url), headers: {
@@ -36,8 +36,7 @@ class HomeCubit extends Cubit<HomeState> {
             ResponseModelSpecialization.fromJson(dataOfSpecialization);
         getDoctorsList(
             specializationId: responseBodySpecialization?.data?.first?.id);
-        emit(HomeSuccess(
-            responseBodySpecialization: responseBodySpecialization!));
+        // emit(HomeSuccess(doctorsData, responseBodySpecialization!));
       } else {
         log(specializationResponse.body);
         emit(HomeFailure());
@@ -51,10 +50,10 @@ class HomeCubit extends Cubit<HomeState> {
     List<DoctorsData?>? doctorList =
         getDoctorsListSpeciationId(specializationId);
     if (!doctorList.isNullOrEmpty()) {
-      emit(DoctorSuccuss(doctorsData: doctorList));
+      emit(HomeSuccess(doctorList, responseBodySpecialization!));
     } else {
       log("Doctors Not Found");
-      emit(DoctorFailure());
+      emit(HomeFailure());
     }
   }
 

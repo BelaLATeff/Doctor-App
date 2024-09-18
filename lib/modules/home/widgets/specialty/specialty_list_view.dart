@@ -15,6 +15,12 @@ class SpecialtyListView extends StatefulWidget {
 
 class _SpecialtyListViewState extends State<SpecialtyListView> {
   var selectedSocializationIndex = 0;
+  List<dynamic> itemList = [];
+  @override
+  void initState() {
+    super.initState();
+    itemList = widget.specializationsData;
+  }
 
   @override
   Widget build(BuildContext context) {
