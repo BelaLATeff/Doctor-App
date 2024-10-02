@@ -1,8 +1,7 @@
+import 'package:doc_app/core/routes/app_router.dart';
+import 'package:doc_app/core/routes/routes.dart';
+import 'package:doc_app/core/theme/colors.dart';
 import 'package:doc_app/main.dart';
-
-import 'routes/app_router.dart';
-import 'routes/routes.dart';
-import 'theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
