@@ -15,17 +15,16 @@ class LoginBlocListener extends StatelessWidget {
     UserData? userData;
     return BlocListener<LoginCubit, LoginState>(
       listener: (context, state) {
-        // if (state is LoginLoading) {
-        // showDialog(
-        //   context: context,
-        //   builder: (context) => const Center(
-        //     child: CircularProgressIndicator(
-        //       color: ColorsManager.mainColor,
-        //     ),
-        //   ),
-        // );
-        // }
-        if (state is LoginSuccess) {
+        if (state is LoginLoading) {
+          showDialog(
+            context: context,
+            builder: (context) => const Center(
+              child: CircularProgressIndicator(
+                color: ColorsManager.mainColor,
+              ),
+            ),
+          );
+        } else if (state is LoginSuccess) {
           userData = state.loginResponseBody.data;
           Get.snackbar(
             "Congratulations",
