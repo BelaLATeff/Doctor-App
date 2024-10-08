@@ -79,18 +79,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
                 heightSpace(24),
-                BlocBuilder<LoginCubit, LoginState>(
-                  builder: (context, state) {
-                    return state is LoginLoading
-                        ? const CircularProgressIndicator()
-                        : AppTextButton(
-                            onPressed: () {
-                              loginButton(context);
-                            },
-                            buttonText: "Login",
-                            textStyle: TextStyles.font16WhiteSemiBold,
-                          );
+                AppTextButton(
+                  onPressed: () {
+                    loginButton(context);
                   },
+                  buttonText: "Login",
+                  textStyle: TextStyles.font16WhiteSemiBold,
                 ),
                 heightSpace(35),
                 const CustomDivider(),

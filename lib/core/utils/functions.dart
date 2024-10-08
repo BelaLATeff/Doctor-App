@@ -7,7 +7,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 void loginButton(BuildContext context) {
   if (BlocProvider.of<LoginCubit>(context).formKey.currentState!.validate()) {
-    const CircularProgressIndicator();
     BlocProvider.of<LoginCubit>(context).emitLogin(
       LoginRequestBody(
         email: context.read<LoginCubit>().emailController!.value.text,

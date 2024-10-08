@@ -18,7 +18,7 @@ class DoctorApp extends StatelessWidget {
       child: GetMaterialApp(
         title: "Doctor App",
         debugShowCheckedModeBanner: false,
-        initialRoute: isLoggedIn ? Routes.home : Routes.login,
+        initialRoute: isLoggedIn ? Routes.home : Routes.onBoarding,
         onGenerateRoute: appRouter.generatorRoute,
         theme: ThemeData(
           primaryColor: ColorsManager.mainColor,
